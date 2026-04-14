@@ -86,22 +86,16 @@ Parameters:
 - `target_crs` (`str | None`, default `None`, optional): 
   - optional projected CRS to reproject both inputs before overlay.
 
-- `element_gdf` and `zone_gdf` must be non-empty.
-- both inputs must have CRS defined.
-  - CRS used for computation must be projected.
-  - if `target_crs` is provided, both inputs are reprojected to it.
-  - if `target_crs` is not provided, both CRS must already match.
-- referenced columns (`element_type_col`, `element_weight_col`, `zone_id_col`) must exist when provided.
-
-Input Assumptions and Units
+Input assumptions
 
 - `zone_gdf` should contain polygon zones.
 - `element_gdf` geometry family should be homogeneous for composition (point-only, line-only, or polygon-only).
 - Both inputs must have CRS defined for computing geometry's length and area.
-  - CRS used for computation must be projected.
+  - CRS must be projected.
   - if `target_crs` is provided, both inputs are reprojected to it.
   - if `target_crs` is not provided, both CRS must already match.
   - length and area units come from the projected CRS.
+- referenced columns (`element_type_col`, `element_weight_col`, `zone_id_col`) must exist when provided.
 - With `density=True`, results are composition per zone-area unit (for example, per `m^2` if CRS uses meters).
 
 ##### `ZoneComposition.zonal_composition() -> geopandas.GeoDataFrame`
@@ -131,6 +125,7 @@ Parameters:
   - passed to `entropy_mix_index` as `normalized`.
 
 Returns:
+
 - `pandas.DataFrame` with first column as zone ID.
 - If `element_type_col` is provided: one column per element type.
 - If `element_type_col` is `None`: one aggregated composition column.
