@@ -1,0 +1,13 @@
+[general]
+name=Zone Composition
+description=Compute zonal composition statistics and mix index using overlay of element and zone layers.
+version=0.1.0
+qgisMinimumVersion=3.28
+author=Zone Composition Contributors
+email=
+about=Processing provider that wraps the zone_composition.py workflow for QGIS users.
+category=Analysis
+icon=
+experimental=False
+deprecated=False
+hasProcessingProvider=yes
