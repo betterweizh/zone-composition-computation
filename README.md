@@ -13,7 +13,7 @@ This repository provides:
 This toolset consists of two components:
 
 - A pure Python script, in [pyscript](pyscript)
-- A QGIS plugin, in [qgis_plugin](qgis_plugin) (to be completed...)
+- A QGIS plugin, in [qgisplugin](qgisplugin) (to be completed...)
 
 ## Requirements
 
